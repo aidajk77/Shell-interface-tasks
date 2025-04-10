@@ -299,7 +299,16 @@ int execute_command(char **args) {
             printf("cowsay: missing message\n");
         }
         return 1;
-    }
+    }   else if (strcmp(args[0], "cd") == 0) {
+       	 if (args[1] == NULL) {
+            fprintf(stderr, "cd: expected argument\n");
+         } else {
+            if (chdir(args[1]) != 0) {
+                perror("cd");
+            }
+        }
+        return 1;
+	}
 
     // Not a built-in command → execute as external command
     pid_t pid = fork();

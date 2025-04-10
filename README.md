@@ -15,7 +15,14 @@ Submission Contents:
 
 Assignment Questions:
 ---------------------
-(Please fill in your answers to the provided assignment questions below.)
+1.5.1 mmap() function is used in C to map files/devices into memory. Instead of reading or writing data from a file using regular I/O functions, you can directly access the file's content as if it was part of the program's memory.it creates a region in the process's memory that is linked to the file or device. This allows you to read from and write to the file just like you would with any array in memory. It is an efficient way to deal with large amounts of data.
+1.5.2 A context switch happens when the OS saves the state of the currently running process and loads the state of another process to allow multitasking.
+A context switch happens when the OS saves the current process's state, like the CPU registers and program counter, so it can continue later from the same point. Then, the OS loads the state of the next process, including its registers and program counter, so that it can keep running like it was never interrupted. This process allows the OS to switch between processes quickly, making it look like multiple processes are running at the same time.
+The number of context switches depends on the situation. Generally, we want fewer context switches because each one takes time and resources, and too many can slow down performance by reducing the time spent on actual tasks. However, in certain cases, like real-time systems or when high multitasking is required, more context switches may be necessary to give the impression of parallel execution, even on a single-core processor.
+1.5.3 the output is : 
+child
+parent
+Becouse execv() failes the "child"  is printed and then the parent waits (wait()) for the child to finish and prints "parent".
 
 What We Did:
 ------------
